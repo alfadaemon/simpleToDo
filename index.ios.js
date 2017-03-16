@@ -1,17 +1,31 @@
 import React, { Component } from 'react';
 import {
   AppRegistry,
-  Text,
   View
 } from 'react-native';
 
+import TaskList from './TaskList'
+
 class simpleToDo extends Component {
+  constructor(props, context){
+    super(props, context);
+    this.state = {
+      todos: [
+        {
+          task: 'Example task',
+        },
+        {
+          task: 'Another sample task',
+        }
+      ]
+    };
+  }
   render() {
     return (
       <View>
-        <Text>
-          Welcome to Simple ToDo App!
-        </Text>
+        <TaskList 
+          todos = {this.state.todos}
+        />
       </View>
     );
   }
